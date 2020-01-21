@@ -1,0 +1,47 @@
+.main
+  .main__header
+    .main__header__left-box
+      .main__header__left-box__group-name 
+        test 
+      %ul.main__header__left-box__group-member 
+        membar:
+        %li.main__header__leftbox__group-member__list hiroki
+    .main__header__right
+      =link_to "#" do
+        Edit
+  .main__message
+    .main__message__box
+      .main__message__box__list 
+        hiroki
+        %p.main__message__box__form 
+          2019/11/11(wed) 18:23:28
+      %p.main__message__box__text
+        こんにちわ
+        .main__message__box
+      .main__message__box__list 
+        hiroki
+        %p.main__message__box__form 
+          2019/11/11(wed) 18:23:28
+      %p.main__message__box__text
+        こんにちわ
+        .main__message__box
+      .main__message__box__list 
+        hiroki
+        %p.main__message__box__form 
+          2019/11/11(wed) 18:23:28
+      %p.main__message__box__text
+        こんにちわ
+  .main__form
+    %form.main__form__box
+      .main__form__box__input
+        %input{class: "main__form__box__input__text", placeholder: "type a message", type: "text",}/
+        %label{class: "main__form__box__input__image", image: "fa.fa-image"}/
+        %i.fa.fa-image
+        %input{class: "main__form__box__input__image__file", type: "file", name: "massage[image]", id: "message_image"}/
+      %input.main__form__submit-btn{type: "submit", name: "commit", value: "Send", data_disable_with: "Send"}/
+
+
+
+
+
+
