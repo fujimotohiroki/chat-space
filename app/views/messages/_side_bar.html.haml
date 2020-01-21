@@ -1,0 +1,26 @@
+.side
+  .side__header
+    .side__header__info
+      .side__header__info__user-name
+        hiroki
+      .side__header__info__icon
+        .side__header__info__icon__create-chat
+          =link_to "#" do
+            =icon('fas','edit')
+        .side__header__info__icon__create-group
+          =link_to "#" do
+            =icon('fas','cog')
+  .side__group
+    .side__group__box
+      %p.side__group__box__name グループ
+      %p.side__group__box__message まだメッセージがありません
+      .side__group
+        .side__group__box
+          %p.side__group__box__name グループ
+          %p.side__group__box__message まだメッセージがありません
+          .side__group
+            .side__group__box
+              %p.side__group__box__name グループ
+              %p.side__group__box__message まだメッセージがありません
+
+
