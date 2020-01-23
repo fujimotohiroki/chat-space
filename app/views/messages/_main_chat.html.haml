@@ -2,12 +2,14 @@
   .main__header
     .main__header__left-box
       .main__header__left-box__group-name 
-        test 
+        = @group.name
       %ul.main__header__left-box__group-member 
         membar:
-        %li.main__header__leftbox__group-member__list hiroki
+        %li.main__header__leftbox__group-member__list 
+          - @group.users.each do |user|
+            = user.name
     .main__header__right
-      =link_to "#" do
+      =link_to edit_group_path(@group) do
         Edit
   .main__message
     .main__message__box
@@ -17,29 +19,15 @@
           2019/11/11(wed) 18:23:28
       %p.main__message__box__text
         こんにちわ
-        .main__message__box
-      .main__message__box__list 
-        hiroki
-        %p.main__message__box__form 
-          2019/11/11(wed) 18:23:28
-      %p.main__message__box__text
-        こんにちわ
-        .main__message__box
-      .main__message__box__list 
-        hiroki
-        %p.main__message__box__form 
-          2019/11/11(wed) 18:23:28
-      %p.main__message__box__text
-        こんにちわ
-  .main__form
-    %form.main__form__box
-      .main__form__box__input
-        %input{class: "main__form__box__input__text", placeholder: "type a message", type: "text",}/
-        %label{class: "main__form__box__input__image", image: "fa.fa-image"}/
-        %i.fa.fa-image
-        %input{class: "main__form__box__input__image__file", type: "file", name: "massage[image]", id: "message_image"}/
-      %input.main__form__submit-btn{type: "submit", name: "commit", value: "Send", data_disable_with: "Send"}/
 
+  .main__form
+    = form_for [@group, @message],html: {class:"main__form__box"} do |f|
+      .main__form__box__input
+        = f.text_field :content, class: "main__form__box__input__text", placeholder: "type a message"
+        = f.label :image, class: "main__form__box__input__image" do
+          = icon('fa', 'image')
+          = f.file_field :image, class: "main__form__box__input__image__file"
+      = f.submit 'Send', class: "main__form__submit-btn"
 
 
 
