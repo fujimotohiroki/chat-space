@@ -108,25 +108,24 @@
       &__box{
         padding-bottom: 46px;
         &__list{
-          font-size: 16px;
           color: #333333;
           display: flex;
           font-weight: bold;
-        }
           &__form{
+            font-size: 16px;
+            color:  #434a54;
+          }
+          &__text{
+            margin-left: 10px;
             font-size: 12px;
             color: #999999;
-            margin: 0 0 0 10px;
           }
-        &__text{
-          margin-top: 12px;
-          color: #434A54;
+        }
           &__font{
             font-size: 14px;
           }
           &__image{
           }
-        }
       }
       }
     &__form{
