@@ -1,11 +1,11 @@
-.message
-  .main-message
-    .main-message__box
+.main__message__box{data: {message: {id: message.id}}}
+  .main__message__box__list
+    .main__message__box__list__form
       = message.user.name
-    .main__message__box__form
+    .main__message__box__list__text
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .main__message__box__text
+  .main__message__box__font
     - if message.content.present?
-      %p.main__message__box__text__font
+      %p.main__message__box__font__image
         = message.content
-    = image_tag message.image.url, class: 'main__message__box__text__image' if message.image.present?
+    = image_tag message.image.url, class: 'main__message__box__text__font__image' if message.image.present?
