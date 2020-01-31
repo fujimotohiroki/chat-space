@@ -1,5 +1,4 @@
 $(function(){ 
-  let last_message_id = $('.main__message__box:last').data("message-id");
     var buildHTML = function(message) {
       if (message.content && message.image) {
         var html = `<div class="main__message__box" data-message-id=${message.id}>
@@ -35,22 +34,20 @@ $(function(){
           </div>
         </div>`
       } else if (message.image) {
-        var html = `<div class="main__message__box" data-message-id=${message.id}>
-          <div class="main__message__box__list">
-            <div class="main__message__box__list__form">
-              ${message.user_name}
+        var html = 
+          `<div class="main__message__box" data-message-id=${message.id}>
+            <div class="main__message__box__list">
+              <div class="main__message__box__list__form">
+                ${message.user_name}
+              </div>
+              <div class="main__message__box__list__text">
+                ${message.created_at}
+              </div>
             </div>
-            <div class="main__message__box__list__text">
-              ${message.created_at}
+            <div class="main__message__box__font">
+              <img src=${message.image} class="main__message__box__text__font__image">
             </div>
-          </div>
-          <div class="main__message__box__text__font">
-            <p class="main__message__box__text__font__image">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
-        </div>`
+          </div>`
       };
       return html;
     };
